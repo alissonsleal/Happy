@@ -1,0 +1,73 @@
+#pageMap {
+  display: flex;
+  position: relative;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+#pageMap aside {
+  background: linear-gradient(329.54deg, #15b6d6 0%, #15d6d6 100%);
+  max-width: 440px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 80px;
+}
+
+#pageMap aside main {
+  max-width: 233px;
+}
+
+#pageMap aside h2 {
+  margin-top: 50px;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 42px;
+}
+
+#pageMap aside p {
+  margin-top: 24px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+#pageMap aside footer {
+  display: flex;
+  flex-direction: column;
+
+  line-height: 24px;
+}
+
+#pageMap aside footer strong {
+  font-weight: 800;
+}
+
+#pageMap .leaflet-container {
+  z-index: 5;
+}
+
+#pageMap .createOrphanage {
+  z-index: 10;
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  background-color: #15c3d6;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  right: 48px;
+  bottom: 48px;
+
+  transition: all 0.2s;
+}
+
+#pageMap .createOrphanage:hover {
+  background: #17d6eb;
+}
