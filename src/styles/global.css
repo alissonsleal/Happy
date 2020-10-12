@@ -13,5 +13,7 @@ body,
 input,
 button,
 textarea {
-  font: 600 28px Nunito, sans-serif;
+  font-family: Nunito, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
 }
