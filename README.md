@@ -6,71 +6,97 @@
     <a href="https://github.com/Alissonsleal/"><img alt="Alisson Leal GitHub Profile" src="https://img.shields.io/badge/made%20by-Alisson%20Leal-sucess?style=flat-square&logo=appveyor"></a>
 </p>
 
+<p align="center">
+<img src="https://i.imgur.com/81SfYLm.png" alt="Happy">
+</p>
+
 # Happy
 
-## Description
+## ✔ Description
 
 Happy is an online platform to find, visit and help orphanages in your city (currently only in Brasília, DF - Brazil).
 
 This project is being built in @Rocketseat 's [Next Level Week #3](https://nextlevelweek.com/episodios/omnistack/2/edicao/3)
 
-This is the monorepo for the project. You can find the Expo project for the mobile app [here](https://expo.io/@alissonsleal/projects/Happy).
-
 [Back To The Top](#Description)
 
-#### Tecnologies
+## ✔ Technologies
 
-- ReactJS
-- React Native
-- React Navigation
-- Expo CLI
-- SQLite
+- **Web**
 
-## Instalation
+  - ReactJS
+  - Typescript
+  - MapBox
+
+- **Backend**
+
+  - NodeJS
+  - Express
+  - TypeORM
+  - Multer
+  - Yup
+  - SQLite
+
+- **Mobile**
+  - React Native
+  - React Navigation
+  - Expo's MapView
+  - Expo CLI
+
+## ✔ Instalation
 
 Clone/download this repository into your computer:
 
 `git clone https://github.com/alissonsleal/Happy`
 
-Go into the folder where you cloned/downloaded and run:
+Go into the folder where you cloned/downloaded and:
 
-For the backend:
+#### For the backend:
+
 `cd /backend` then `npm install` and `npm run dev`
 
-For the frontend:
+The backend will be running in `http://localhost:/4000`
+
+#### For the frontend:
+
 `cd /web` then `npm install` and `npm run start`
 
-For the mobile app:
+The frontend will be running in `http://localhost:/3000`
+
+#### For the mobile app:
+
 `cd /mobile` then `npm install` and `expo start`
+
+You can find the Expo project for the mobile app [here](https://expo.io/@alissonsleal/projects/Happy).
 
 [Back To The Top](#Description)
 
-## Screenshots
+## 📸 Screenshots
 
 #### ReactJS:
 
 <p align="center">
-<img src="https://i.imgur.com/jleKpKZ.png" alt="Front Page" width="512px">
+<img src="https://i.imgur.com/jleKpKZ.png" alt="Front Page" width="768px">
 Front Page
 </p>
 
 <p align="center">
-<img src="https://i.imgur.com/DzTTOkt.png" alt="Map Page" width="512px">
+<img src="https://i.imgur.com/DzTTOkt.png" alt="Map Page" width="768px">
 Map Page
 </p>
 
 <p align="center">
-<img src="https://i.imgur.com/btgNW2m.gif" alt="Creating a new location Page" width="512px">
+<img src="https://i.imgur.com/btgNW2m.gif" alt="Creating a new location Page" width="768px">
 Creating a new location Page
 </p>
 
 <p align="center">
-<img src="https://i.imgur.com/pwoD40H.gif" alt="Details Page" width="512px">
+<img src="https://i.imgur.com/pwoD40H.gif" alt="Details Page" width="768px">
 Details Page
 </p>
 
 <p align="center">
-<img src="https://i.imgur.com/hRLmLa5.gif" alt="Average workflow to Create a new location" width="512px">
+<img src="https://i.imgur.com/hRLmLa5.gif" alt="Average workflow to Create a new location" width="768px">
 Average workflow to Create a new location
 </p>
 
@@ -80,7 +106,7 @@ Average workflow to Create a new location
 <img src="https://i.imgur.com/LMeLr4b.gif" alt="Average workflow to Create a new location" width="256px">
 </p>
 
-## Hacktoberfest
+## 🎃 Hacktoberfest
 
 We're totally Hacktoberfest friendly, feel free to do some pull requests and help this project.
 
