@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlinePlus, AiOutlineArrowRight } from "react-icons/ai";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
@@ -8,8 +8,24 @@ import "../styles/pages/orphanagesMap.css";
 
 import logo from "./../images/mapMarker.svg";
 import mapIcon from "../utils/mapIcons";
+import api from "../services/api";
+
+interface Orphanage {
+  id: number;
+  latitude: number;
+  longitude: number;
+  name: string;
+}
 
 function OrphanagesMap() {
+  const [orphanages, setOrphanages] = useState<Orphanage[]>([]);
+
+  useEffect(() => {
+    api.get('orphanages').then((r) => {
+      setOrphanages(r.data);
+    })
+  }, [])
+
   return (
     <div id="pageMap">
       <aside>
@@ -36,17 +52,24 @@ function OrphanagesMap() {
           url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
         />
 
-      <Marker 
-        icon={mapIcon}
-        position={[-15.7911685, -47.9309832]}
-      >
-        <Popup closeButton={false} minWidth={240} maxWidth={240} className="mapPopup">
-          Casa da Criança
-          <Link to="/orphanages/1">
-            <AiOutlineArrowRight size={20} color="#FFF" />
-          </Link>
-        </Popup>
-      </Marker>
+        {
+          orphanages.map(orphanage => {
+            return(
+              <Marker 
+              icon={mapIcon}
+              position={[orphanage.latitude, orphanage.longitude]}
+              key={orphanage.id}
+            >
+              <Popup closeButton={false} minWidth={240} maxWidth={240} className="mapPopup">
+                {orphanage.name}
+                <Link to={`/orphanages/${orphanage.id}`}>
+                  <AiOutlineArrowRight size={20} color="#FFF" />
+                </Link>
+              </Popup>
+            </Marker>
+            )
+          })
+        }
 
       </Map>
 
