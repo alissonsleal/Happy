@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { AiOutlinePlus } from "react-icons/ai";
-import { Map, TileLayer } from "react-leaflet";
+import { AiOutlinePlus, AiOutlineArrowRight } from "react-icons/ai";
+import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 
 import "leaflet/dist/leaflet.css";
-
 import "../styles/pages/orphanagesMap.css";
+
 import logo from "./../images/mapMarker.svg";
+import mapIcon from "../utils/mapIcons";
 
 function OrphanagesMap() {
   return (
@@ -14,7 +15,7 @@ function OrphanagesMap() {
       <aside>
         <main>
           <header>
-            <img src={logo} />
+            <img src={logo} alt="Happy Logo"/>
           </header>
           <h2>Escolha um orfanato no mapa</h2>
           <p>Muitas Crianças estão esperando a sua visita :)</p>
@@ -32,11 +33,24 @@ function OrphanagesMap() {
         style={{ width: "100%", height: "100%" }}
       >
         <TileLayer
-          url={`https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
+          url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
         />
+
+      <Marker 
+        icon={mapIcon}
+        position={[-15.7911685, -47.9309832]}
+      >
+        <Popup closeButton={false} minWidth={240} maxWidth={240} className="mapPopup">
+          Casa da Criança
+          <Link to="/orphanages/1">
+            <AiOutlineArrowRight size={20} color="#FFF" />
+          </Link>
+        </Popup>
+      </Marker>
+
       </Map>
 
-      <Link to="" className="createOrphanage">
+      <Link to="/orphanages/create" className="createOrphanage">
         <AiOutlinePlus size={32} />
       </Link>
     </div>
