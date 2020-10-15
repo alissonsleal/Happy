@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "mobile",
-    "slug": "mobile",
+    "name": "Happy",
+    "slug": "Happy",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/appIcon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/splashscreen.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#1cbcce"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -20,7 +20,9 @@
       "supportsTablet": true
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/happyIcon.png"
+    },
+    "description": "",
+    "githubUrl": "https://github.com/Alissonsleal/happy"
   }
 }
