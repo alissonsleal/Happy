@@ -37,3 +37,15 @@ aside.app-sidebar footer a:hover,
 aside.app-sidebar footer button:hover {
   background: #17d6eb;
 }
+
+@media screen and (max-width: 768px) {
+  aside.app-sidebar {
+    max-width: 36px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  aside.app-sidebar {
+    max-width: 36px;
+  }
+}

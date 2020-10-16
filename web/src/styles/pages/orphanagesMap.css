@@ -6,6 +6,11 @@
   height: 100vh;
 }
 
+#pageMap label,
+#pageMap #hamburguer {
+  display: none;
+}
+
 #pageMap aside {
   background: linear-gradient(329.54deg, #15b6d6 0%, #15d6d6 100%);
   max-width: 440px;
@@ -103,4 +108,38 @@
 
 #pageMap .mapPopup .leaflet-popup-tip-container {
   display: none;
+}
+
+@media screen and (max-width: 900px) {
+  body {
+    background-color: #fff;
+  }
+
+  #pageMap aside {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  #pageMap label {
+    display: flex;
+    z-index: 10;
+    font-size: 20px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    border: 1px solid #fff;
+    background-color: #15d6d6;
+    padding: 5px 10px;
+
+    transition: all 0.1s;
+  }
+
+  #pageMap label:active {
+    color: #333;
+    border: 1px solid #333;
+  }
+
+  #pageMap input:checked ~ .toggleMenu {
+    display: none;
+  }
 }

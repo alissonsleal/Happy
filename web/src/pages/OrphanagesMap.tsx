@@ -28,7 +28,10 @@ function OrphanagesMap() {
 
   return (
     <div id="pageMap">
-      <aside>
+      <label htmlFor="hamburguer">&#9776;</label>
+      <input type="checkbox" id="hamburguer" onClick={() => {}} />
+      <aside className="toggleMenu" >
+        <div id="itemBar">
         <main>
           <header>
             <img src={logo} alt="Happy Logo"/>
@@ -41,12 +44,14 @@ function OrphanagesMap() {
           <strong>Brasília</strong>
           <span>Distrito Federal</span>
         </footer>
+        </div>
       </aside>
 
       <Map
         center={[-15.7911685, -47.9309832]}
         zoom={12.5}
         style={{ width: "100%", height: "100%" }}
+        zoomControl={false}
       >
         <TileLayer
           url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}

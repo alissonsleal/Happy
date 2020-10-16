@@ -166,3 +166,21 @@ form.create-orphanage-form button.confirm-button svg {
 form.create-orphanage-form button.confirm-button:hover {
   background: #36cf82;
 }
+
+@media screen and (max-width: 400px) {
+  #page-create-orphanage {
+  }
+  form.create-orphanage-form {
+    max-width: 400px;
+    margin: 6px auto;
+    padding: 5px 56px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  form.create-orphanage-form {
+    max-width: 400px;
+    margin: 6px auto;
+    padding: 5px 56px;
+  }
+}
