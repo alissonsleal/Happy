@@ -26,7 +26,8 @@
   align-items: flex-start;
   flex-direction: column;
 
-  justify-content: space-between;
+  /*   justify-content: space-between;
+ */
 }
 
 #pageLanding .wrapper main {
@@ -85,4 +86,60 @@
 .wrapper .enterApp:hover {
   background: #96feff;
   color: #15c3d6;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: #333;
+  }
+
+  #pageLanding .wrapper {
+    background: url("../../images/landingKids.svg") no-repeat 80% 120%;
+    background-size: contain;
+  }
+  #pageLanding {
+    padding: 0px 0px 0px 40px;
+    /* padding-left: 40px;
+    padding-top: 0px; */
+  }
+
+  #pageLanding .wrapper main {
+    margin-top: 20px;
+    /* max-width: 200px; */
+    justify-content: center;
+  }
+
+  #pageLanding .wrapper main h1 {
+    font-size: 40px;
+    line-height: 36px;
+  }
+
+  #pageLanding .wrapper main p {
+    margin-top: 24px;
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .wrapper .location {
+    /*     position: initial;
+    display: flex;
+    align-items: flex-start;
+    margin-top: 60px; */
+    position: absolute;
+    right: auto;
+    top: auto;
+    left: 0px;
+    bottom: 60px;
+    align-items: flex-start;
+  }
+
+  .wrapper .enterApp {
+    position: absolute;
+    right: 60px;
+    bottom: 60px;
+
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+  }
 }
