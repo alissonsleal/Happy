@@ -16,7 +16,7 @@
 
 Happy is an online platform to find, visit and help orphanages in your city (currently only in Brasília, DF - Brazil).
 
-This project is being built in @Rocketseat 's [Next Level Week #3](https://nextlevelweek.com/episodios/omnistack/2/edicao/3)
+This project was built during @Rocketseat's [Next Level Week #3](https://nextlevelweek.com/episodios/omnistack/2/edicao/3)
 
 [Back To The Top](#Description)
 
@@ -43,29 +43,63 @@ This project is being built in @Rocketseat 's [Next Level Week #3](https://nextl
   - Expo's MapView
   - Expo CLI
 
-## ✔ Instalation
+## ✔ How To Use
 
 Clone/download this repository into your computer:
 
-`git clone https://github.com/alissonsleal/Happy`
+```bash
+git clone https://github.com/alissonsleal/Happy
+```
 
 Go into the folder where you cloned/downloaded and:
 
 #### For the backend:
 
-`cd /backend` then `npm install` and `npm run dev`
+```bash
+#cd into folder
+cd /backend
 
-The backend will be running in `http://localhost:/4000`
+#install dependencies
+npm install
+
+#create database
+npm run typeorm migration:run
+
+#start server
+npm run dev
+
+#server running at http://localhost:/4000
+```
 
 #### For the frontend:
 
-`cd /web` then `npm install` and `npm run start`
+```bash
+#cd into folder
+cd /web
 
-The frontend will be running in `http://localhost:/3000`
+#install dependencies
+npm install
+
+#start live server
+npm run start
+
+#live server running at http://localhost:/3000
+```
 
 #### For the mobile app:
 
-`cd /mobile` then `npm install` and `expo start`
+```bash
+#cd into folder
+cd /mobile
+
+#install dependencies
+npm install
+
+#start live server
+expo start
+
+#open expo app in your android/ios phone/simulator
+```
 
 You can find the Expo project for the mobile app [here](https://expo.io/@alissonsleal/projects/Happy).
 
@@ -96,7 +130,7 @@ You can find the Expo project for the mobile app [here](https://expo.io/@alisson
 #### 🤳 React Native app:
 
 <p align="center">
-<img src="https://i.imgur.com/LMeLr4b.gif" alt="Average workflow to Create a new location" width="256px">
+<img src="https://i.imgur.com/ypiFUgH.gif" alt="Average workflow to Create a new location" width="256px">
 </p>
 
 ## 🎃 Hacktoberfest
