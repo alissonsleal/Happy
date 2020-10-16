@@ -73,34 +73,27 @@ You can find the Expo project for the mobile app [here](https://expo.io/@alisson
 
 ## 📸 Screenshots
 
-#### ReactJS:
+#### 💻 ReactJS:
 
 <p align="center">
 <img src="https://i.imgur.com/jleKpKZ.png" alt="Front Page" width="768px">
-Front Page
 </p>
 
 <p align="center">
 <img src="https://i.imgur.com/DzTTOkt.png" alt="Map Page" width="768px">
-Map Page
 </p>
 
 <p align="center">
 <img src="https://i.imgur.com/btgNW2m.gif" alt="Creating a new location Page" width="768px">
-Creating a new location Page
 </p>
 
 <p align="center">
 <img src="https://i.imgur.com/pwoD40H.gif" alt="Details Page" width="768px">
-Details Page
 </p>
 
-<p align="center">
-<img src="https://i.imgur.com/hRLmLa5.gif" alt="Average workflow to Create a new location" width="768px">
-Average workflow to Create a new location
-</p>
+[Average workflow to Create a new location](https://i.imgur.com/hRLmLa5.gif)
 
-#### React Native app:
+#### 🤳 React Native app:
 
 <p align="center">
 <img src="https://i.imgur.com/LMeLr4b.gif" alt="Average workflow to Create a new location" width="256px">
