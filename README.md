@@ -68,7 +68,7 @@ npm run typeorm migration:run
 #start server
 npm run dev
 
-#server running at http://localhost:/4000
+#server running at http://localhost:/3333
 ```
 
 #### For the frontend:
