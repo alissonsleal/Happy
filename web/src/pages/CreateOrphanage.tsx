@@ -1,13 +1,16 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { Map, Marker, TileLayer } from "react-leaflet";
-
-import { FiPlus } from "react-icons/fi";
-
+import { FiPlus, FiX } from "react-icons/fi";
 import "../styles/pages/create-orphanage.css";
 import Sidebar from "../components/Sidebar";
 import mapIcon from "../utils/mapIcons";
 import api from "../services/api";
 import { useHistory } from "react-router-dom";
+
+interface PreviewImage {
+  name: string;
+  url: string;
+}
 
 export default function CreateOrphanage() {
   const history = useHistory();
@@ -30,7 +33,7 @@ export default function CreateOrphanage() {
   const [opening_hours, setOpeningHours] = useState("");
   const [open_on_weekends, setOpenOnWeekends] = useState(true);
   const [images, setImages] = useState<File[]>([]);
-  const [previewImages, setPreviewImages] = useState<string[]>([]);
+  const [previewImages, setPreviewImages] = useState<PreviewImage[]>([]);
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -65,14 +68,25 @@ export default function CreateOrphanage() {
 
     const selectedImages = Array.from(e.target.files);
 
+    e.target.value = "";
+
     setImages(selectedImages);
 
     const selectedImagesPreview = selectedImages.map((image) => {
-      return URL.createObjectURL(image);
+      return { name: image.name, url: URL.createObjectURL(image) };
     });
 
     setPreviewImages(selectedImagesPreview);
   };
+
+  function handleRemoveImage(image: PreviewImage) {
+    setPreviewImages(
+      previewImages.map((image) => image).filter((img) => img.url !== image.url)
+    );
+    setImages(
+      images.map((image) => image).filter((img) => img.name !== image.name)
+    );
+  }
 
   return (
     <div id="page-create-orphanage">
@@ -129,12 +143,15 @@ export default function CreateOrphanage() {
               <div className="images-container">
                 {previewImages.map((image) => {
                   return (
-                    <img
-                      src={image}
-                      alt={name}
-                      key={image}
-                      className="new-image"
-                    />
+                    <div key={image.url}>
+                      <span
+                        className="remove-image"
+                        onClick={() => handleRemoveImage(image)}
+                      >
+                        <FiX size={18} color="#ff669d" />
+                      </span>
+                      <img src={image.url} alt={name} className="new-image" />
+                    </div>
                   );
                 })}
 

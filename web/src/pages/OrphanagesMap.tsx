@@ -32,18 +32,18 @@ function OrphanagesMap() {
       <input type="checkbox" id="hamburguer" onClick={() => {}} />
       <aside className="toggleMenu" >
         <div id="itemBar">
-        <main>
-          <header>
-            <img src={logo} alt="Happy Logo"/>
-          </header>
-          <h2>Escolha um orfanato no mapa</h2>
-          <p>Muitas Crianças estão esperando a sua visita :)</p>
-        </main>
+          <main>
+            <header>
+              <img src={logo} alt="Happy Logo"/>
+            </header>
+            <h2>Escolha um orfanato no mapa</h2>
+            <p>Muitas Crianças estão esperando a sua visita :)</p>
+          </main>
 
-        <footer>
-          <strong>Brasília</strong>
-          <span>Distrito Federal</span>
-        </footer>
+          <footer>
+            <strong>Brasília</strong>
+            <span>Distrito Federal</span>
+          </footer>
         </div>
       </aside>
 
@@ -60,22 +60,22 @@ function OrphanagesMap() {
         {
           orphanages.map(orphanage => {
             return(
-              <Marker 
-              icon={mapIcon}
-              position={[orphanage.latitude, orphanage.longitude]}
-              key={orphanage.id}
-            >
-              <Popup closeButton={false} minWidth={240} maxWidth={240} className="mapPopup">
-                {orphanage.name}
-                <Link to={`/orphanages/${orphanage.id}`}>
-                  <AiOutlineArrowRight size={20} color="#FFF" />
-                </Link>
-              </Popup>
-            </Marker>
+              <Marker
+                icon={mapIcon}
+                position={[orphanage.latitude, orphanage.longitude]}
+                key={orphanage.id}
+              >
+                <Popup closeButton={false} minWidth={240} maxWidth={240} className="mapPopup">
+                  {orphanage.name}
+                  <Link to={`/orphanages/${orphanage.id}`}>
+                    <AiOutlineArrowRight size={20} color="#FFF" />
+                  </Link>
+                </Popup>
+              </Marker>
             )
-          })
+        })
         }
-
+        
       </Map>
 
       <Link to="/orphanages/create" className="createOrphanage">
