@@ -21,29 +21,29 @@ function OrphanagesMap() {
   const [orphanages, setOrphanages] = useState<Orphanage[]>([]);
 
   useEffect(() => {
-    api.get('orphanages').then((r) => {
+    api.get("orphanages").then((r) => {
       setOrphanages(r.data);
-    })
-  }, [])
+    });
+  }, []);
 
   return (
     <div id="pageMap">
       <label htmlFor="hamburguer">&#9776;</label>
       <input type="checkbox" id="hamburguer" onClick={() => {}} />
-      <aside className="toggleMenu" >
+      <aside className="toggleMenu">
         <div id="itemBar">
-        <main>
-          <header>
-            <img src={logo} alt="Happy Logo"/>
-          </header>
-          <h2>Escolha um orfanato no mapa</h2>
-          <p>Muitas Crianças estão esperando a sua visita :)</p>
-        </main>
+          <main>
+            <header>
+              <img src={logo} alt="Happy Logo" />
+            </header>
+            <h2>Escolha um orfanato no mapa</h2>
+            <p>Muitas Crianças estão esperando a sua visita :)</p>
+          </main>
 
-        <footer>
-          <strong>Brasília</strong>
-          <span>Distrito Federal</span>
-        </footer>
+          <footer>
+            <strong>Brasília</strong>
+            <span>Distrito Federal</span>
+          </footer>
         </div>
       </aside>
 
@@ -57,25 +57,27 @@ function OrphanagesMap() {
           url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
         />
 
-        {
-          orphanages.map(orphanage => {
-            return(
-              <Marker 
+        {orphanages.map((orphanage) => {
+          return (
+            <Marker
               icon={mapIcon}
               position={[orphanage.latitude, orphanage.longitude]}
               key={orphanage.id}
             >
-              <Popup closeButton={false} minWidth={240} maxWidth={240} className="mapPopup">
+              <Popup
+                closeButton={false}
+                minWidth={240}
+                maxWidth={240}
+                className="mapPopup"
+              >
                 {orphanage.name}
                 <Link to={`/orphanages/${orphanage.id}`}>
                   <AiOutlineArrowRight size={20} color="#FFF" />
                 </Link>
               </Popup>
             </Marker>
-            )
-          })
-        }
-
+          );
+        })}
       </Map>
 
       <Link to="/orphanages/create" className="createOrphanage">
