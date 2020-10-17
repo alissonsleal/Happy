@@ -10,19 +10,23 @@
       "resizeMode": "contain",
       "backgroundColor": "#1cbcce"
     },
+    "ios": {
+      "bundleIdentifier": "com.appali.happy",
+      "buildNumber": "1.0.0",
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.appali.happy",
+      "versionCode": 1
+    },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
-    },
+    "assetBundlePatterns": ["**/*"],
     "web": {
       "favicon": "./assets/happyIcon.png"
     },
-    "description": "",
+    "description": "Happy is an online platform to find, visit and help orphanages in your city",
     "githubUrl": "https://github.com/Alissonsleal/happy"
   }
 }
